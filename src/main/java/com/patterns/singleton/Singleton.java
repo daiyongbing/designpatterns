@@ -7,8 +7,8 @@ package com.patterns.singleton;
  * @Version:        1.0
  */
 public class Singleton {
-    private static final Singleton lazySingleTon = new Singleton();
-    private static volatile Singleton hungrySingleTon = null;
+    private static final Singleton lazySingleton = new Singleton();
+    private static volatile Singleton hungrySingleton = null;
     private Singleton(){};
     /**
      * @Description 饿汉式
@@ -17,7 +17,7 @@ public class Singleton {
      * @date        2019/11/13
      */
     public static Singleton getLazyInstance(){
-        return lazySingleTon;
+        return lazySingleton;
     }
 
     /**
@@ -27,9 +27,9 @@ public class Singleton {
      * @date        2019/11/13
      */
     public static synchronized Singleton getHungryInstance(){
-            if (hungrySingleTon == null){
-                hungrySingleTon = new Singleton();
+            if (hungrySingleton == null){
+                hungrySingleton = new Singleton();
             }
-        return hungrySingleTon;
+        return hungrySingleton;
     }
 }
