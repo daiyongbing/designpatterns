@@ -3,14 +3,14 @@ package com.patterns.singleton;
 public class SingletonTest {
     public static void main( String[] args )
     {
-        Singleton lazyInstance1 = Singleton.getLazyInstance();
-        Singleton lazyInstance2 = Singleton.getLazyInstance();
+        LazySingleton lazyInstance1 = LazySingleton.getInstance();
+        LazySingleton lazyInstance2 = LazySingleton.getInstance();
 
-        Singleton hungryInstance1 = Singleton.getHungryInstance();
-        Singleton hungryInstance2 = Singleton.getHungryInstance();
+        HungrySingleton hungryInstance1 = HungrySingleton.getInstance();
+        HungrySingleton hungryInstance2 = HungrySingleton.getInstance();
 
-        System.out.println( lazyInstance1 == lazyInstance2 );
-        System.out.println( hungryInstance1 == hungryInstance2 );
+        System.out.println(lazyInstance1 == lazyInstance2);
+        System.out.println(hungryInstance1 == hungryInstance2);
 
     }
 }
